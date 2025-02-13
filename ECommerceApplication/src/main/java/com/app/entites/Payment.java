@@ -1,5 +1,6 @@
 package com.app.entites;
 
+import com.app.exceptions.ResourceNotFoundException;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,9 +10,13 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Entity
 @Data
@@ -19,6 +24,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Payment {
+	private static final Map<String, Integer> bankList = new HashMap<>();
+
+	static {
+		bankList.put("BCA", 1234567890);
+		bankList.put("BNI", 1231231231);
+		bankList.put("BRI", 1234509876);
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +40,15 @@ public class Payment {
 	private Order order;
 
 	@NotBlank
-	@Size(min = 4, message = "Payment method must contain atleast 4 characters")
 	private String paymentMethod;
 
+	private Integer accountNumber;
+
+	public void setPayment(String paymentMethod) {
+		if (!bankList.containsKey(paymentMethod)) {
+			throw new ResourceNotFoundException("Bank", "name", paymentMethod);
+		}
+		this.paymentMethod = paymentMethod;
+		this.accountNumber = bankList.get(paymentMethod);
+	}
 }
