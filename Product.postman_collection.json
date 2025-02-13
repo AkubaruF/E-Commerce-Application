@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "698f2990-823f-4153-9c37-891473806172",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39228992"
+	},
+	"item": [
+		{
+			"name": "CreateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 0,\r\n  \"productName\": \"stringthird\",\r\n  \"image\": \"default.png\",\r\n  \"description\": \"string\",\r\n  \"quantity\": 10,\r\n  \"price\": 10000,\r\n  \"discount\": 0,\r\n  \"specialPrice\": 0,\r\n  \"category\": {\r\n    \"categoryId\": 3,\r\n    \"categoryName\": \"string1\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/categories/38/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"categories",
+						"38",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 3,\r\n  \"productName\": \"string10\",\r\n  \"image\": \"default.png\",\r\n  \"description\": \"string\",\r\n  \"quantity\": 15,\r\n  \"price\": 15000,\r\n  \"discount\": 1,\r\n  \"specialPrice\": 1,\r\n  \"category\": {\r\n    \"categoryId\": 2,\r\n    \"categoryName\": \"string1\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditImageByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"image\": \"string.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/products/2/image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"products",
+						"2",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllProductByCategory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/categories/1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"categories",
+						"1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/products?pageNumber=0&pageSize=21&sortBy=productId&sortOrder=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"products"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "21"
+						},
+						{
+							"key": "sortBy",
+							"value": "productId"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductByKeyword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/products/keyword/string?pageNumber=0&pageSize=5&sortBy=productId&sortOrder=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"products",
+						"keyword",
+						"string"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						},
+						{
+							"key": "sortBy",
+							"value": "productId"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

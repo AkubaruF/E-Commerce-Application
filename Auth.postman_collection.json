@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "e8a2eab3-d00a-483f-af98-ab2b7d841c1d",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39228992"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 99901,\r\n  \"firstName\": \"Alanturing\",\r\n  \"lastName\": \"Smithee\",\r\n  \"mobileNumber\": \"1234567890\",\r\n  \"email\": \"alansmithee99901@gmail.com\",\r\n  \"password\": \"String123\",\r\n  \"roles\": [\r\n    {\r\n      \"roleId\": \"101\",\r\n      \"roleName\": \"ADMIN\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"addressId\": 999,\r\n    \"street\": \"The name\",\r\n    \"buildingName\": \"New Building\",\r\n    \"city\": \"Instinct\",\r\n    \"state\": \"Reason\",\r\n    \"country\": \"Perancis\",\r\n    \"pincode\": \"678901\"\r\n  },\r\n  \"cart\": {\r\n    \"cartId\": 999\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"alansmithee9990@gmail.com\",\r\n  \"password\": \"String123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

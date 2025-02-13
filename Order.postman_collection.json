@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "02530203-3710-4295-b886-04d5230d6224",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39228992"
+	},
+	"item": [
+		{
+			"name": "GetAllOrders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/orders?pageNumber=0&pageSize=21&sortBy=totalAmount&sortOrder=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "21"
+						},
+						{
+							"key": "sortBy",
+							"value": "totalAmount"
+						},
+						{
+							"key": "sortOrder",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrderStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/users/user@gmail.com/orders/6/orderStatus/String",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"users",
+						"user@gmail.com",
+						"orders",
+						"6",
+						"orderStatus",
+						"String"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "alansmithee99901@gmail.com",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/public/users/alansmithee11@gmail.com/carts/12/payments/Cash/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"users",
+						"alansmithee11@gmail.com",
+						"carts",
+						"12",
+						"payments",
+						"Cash",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrdersByEmail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/users/alansmithee1@gmail.com/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"users",
+						"alansmithee1@gmail.com",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderByEmail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/users/alansmithee5@gmail.com/orders/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"users",
+						"alansmithee5@gmail.com",
+						"orders",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

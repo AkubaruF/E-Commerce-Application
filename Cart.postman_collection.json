@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "1514d494-f8e9-45eb-8ea8-4e59d08af3aa",
+		"name": "Cart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39228992"
+	},
+	"item": [
+		{
+			"name": "GetCarts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/carts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProductInCartByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/carts/9/product/52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"carts",
+						"9",
+						"product",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditProductInCartByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/carts/5/products/13/quantity/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"carts",
+						"5",
+						"products",
+						"13",
+						"quantity",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProductInCartByID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/carts/10/products/52/quantity/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"carts",
+						"10",
+						"products",
+						"52",
+						"quantity",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCartByEmail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwttoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/public/users/alansmithee99901@gmail.com/carts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"public",
+						"users",
+						"alansmithee99901@gmail.com",
+						"carts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
