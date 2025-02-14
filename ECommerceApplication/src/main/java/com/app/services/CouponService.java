@@ -1,13 +1,14 @@
 package com.app.services;
 
 import com.app.entites.Coupon;
+import com.app.payloads.CartDTO;
 import com.app.payloads.CouponDTO;
 import com.app.payloads.CouponResponse;
 
 public interface CouponService {
     CouponResponse getAllCoupon(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
-    CouponDTO addCouponToUserCart(String email, Long orderId, Long couponId);
+    CartDTO addCouponToUserCart(String email, long cartId, Long couponId);
 
     CouponDTO createCoupon(Coupon coupon);
 
