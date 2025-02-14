@@ -1,0 +1,3735 @@
+{
+	"info": {
+		"_postman_id": "e25e0110-601e-4f0e-b71c-7b368ffecf1a",
+		"name": "E-Commerce Application Copy",
+		"description": "Backend APIs for E-Commerce app\n\nContact Support:\n Name: Shaik Sirajuddin\n Email: shaiksirajuddin135@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23451716"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "public",
+					"item": [
+						{
+							"name": "users",
+							"item": [
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "get User",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/public/users/{{userID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"public",
+														"users",
+														"{{userID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/public/users/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"public",
+																"users",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"userId\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"roles\": [\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    },\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  },\n  \"cart\": {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n}"
+												}
+											]
+										},
+										{
+											"name": "update User",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userId\": 2,\n  \"firstName\": \"rikza\",\n  \"lastName\": \"bukanadminloh\",\n  \"mobileNumber\": \"3170547700\",\n  \"email\": \"rikza@gmail.com\",\n  \"password\": \"rikza\",\n  \"roles\": [\n    {\n      \"roleId\": 102,\n      \"roleName\": \"USER\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 1,\n    \"street\": \"street1\",\n    \"buildingName\": \"building\",\n    \"city\": \"jaksel\",\n    \"state\": \"jakarta\",\n    \"country\": \"indonesia\",\n    \"pincode\": \"352123\"\n  }\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/public/users/{{userID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"public",
+														"users",
+														"{{userID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"userId\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"roles\": [\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    },\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  },\n  \"cart\": {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/public/users/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"public",
+																"users",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"userId\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"roles\": [\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    },\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  },\n  \"cart\": {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "{email}",
+									"item": [
+										{
+											"name": "carts",
+											"item": [
+												{
+													"name": "{cartId}",
+													"item": [
+														{
+															"name": "payments",
+															"item": [
+																{
+																	"name": "{paymentMethod}",
+																	"item": [
+																		{
+																			"name": "order",
+																			"item": [
+																				{
+																					"name": "order Products",
+																					"request": {
+																						"auth": {
+																							"type": "bearer",
+																							"bearer": [
+																								{
+																									"key": "token",
+																									"value": "{{bearerToken}}",
+																									"type": "string"
+																								}
+																							]
+																						},
+																						"method": "POST",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							}
+																						],
+																						"body": {
+																							"mode": "raw",
+																							"raw": "{\r\n    \"cardNumber\": \"1222222222131313113\",\r\n    \"cvc\" : \"121\"\r\n}",
+																							"options": {
+																								"raw": {
+																									"language": "json"
+																								}
+																							}
+																						},
+																						"url": {
+																							"raw": "{{baseUrl}}/api/public/users/{{email}}/carts/{{cartID}}/payments/{{paymentMethod}}/order",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"public",
+																								"users",
+																								"{{email}}",
+																								"carts",
+																								"{{cartID}}",
+																								"payments",
+																								"{{paymentMethod}}",
+																								"order"
+																							]
+																						}
+																					},
+																					"response": [
+																						{
+																							"name": "OK",
+																							"originalRequest": {
+																								"method": "POST",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									},
+																									{
+																										"key": "Authorization",
+																										"value": "Bearer <token>",
+																										"description": "Added as a part of security scheme: bearer"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/public/users/:email/carts/:cartId/payments/:paymentMethod/order",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"public",
+																										"users",
+																										":email",
+																										"carts",
+																										":cartId",
+																										"payments",
+																										":paymentMethod",
+																										"order"
+																									],
+																									"variable": [
+																										{
+																											"key": "email"
+																										},
+																										{
+																											"key": "cartId"
+																										},
+																										{
+																											"key": "paymentMethod"
+																										}
+																									]
+																								}
+																							},
+																							"status": "OK",
+																							"code": 200,
+																							"_postman_previewlanguage": "text",
+																							"header": [
+																								{
+																									"key": "Content-Type",
+																									"value": "*/*"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n  \"orderId\": \"<long>\",\n  \"email\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ],\n  \"orderDate\": \"<date>\",\n  \"payment\": {\n    \"paymentId\": \"<long>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"orderStatus\": \"<string>\"\n}"
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"name": "get Cart By Id",
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": [
+																		{
+																			"key": "token",
+																			"value": "{{bearerToken}}",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/public/users/{{email}}/carts/{{cartID}}",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"public",
+																		"users",
+																		"{{email}}",
+																		"carts",
+																		"{{cartID}}"
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			},
+																			{
+																				"key": "Authorization",
+																				"value": "Bearer <token>",
+																				"description": "Added as a part of security scheme: bearer"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/public/users/:email/carts/:cartId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"public",
+																				"users",
+																				":email",
+																				"carts",
+																				":cartId"
+																			],
+																			"variable": [
+																				{
+																					"key": "email"
+																				},
+																				{
+																					"key": "cartId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "*/*"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"cartId\": \"<long>\",\n  \"totalPrice\": \"<double>\",\n  \"products\": [\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    }\n  ]\n}"
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "orders",
+											"item": [
+												{
+													"name": "{orderId}",
+													"item": [
+														{
+															"name": "get Order By User",
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": [
+																		{
+																			"key": "token",
+																			"value": "{{bearerToken}}",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/public/users/{{email}}/orders/{{orderID}}",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"public",
+																		"users",
+																		"{{email}}",
+																		"orders",
+																		"{{orderID}}"
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			},
+																			{
+																				"key": "Authorization",
+																				"value": "Bearer <token>",
+																				"description": "Added as a part of security scheme: bearer"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/public/users/:email/orders/:orderId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"public",
+																				"users",
+																				":email",
+																				"orders",
+																				":orderId"
+																			],
+																			"variable": [
+																				{
+																					"key": "email"
+																				},
+																				{
+																					"key": "orderId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "*/*"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"orderId\": \"<long>\",\n  \"email\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ],\n  \"orderDate\": \"<date>\",\n  \"payment\": {\n    \"paymentId\": \"<long>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"orderStatus\": \"<string>\"\n}"
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "get Orders By User",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/public/users/{{email}}/orders",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"public",
+																"users",
+																"{{email}}",
+																"orders"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/public/users/:email/orders",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"public",
+																		"users",
+																		":email",
+																		"orders"
+																	],
+																	"variable": [
+																		{
+																			"key": "email"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "[\n  {\n    \"orderId\": \"<long>\",\n    \"email\": \"<string>\",\n    \"orderItems\": [\n      {\n        \"orderItemId\": \"<long>\",\n        \"product\": {\n          \"productId\": \"<long>\",\n          \"productName\": \"<string>\",\n          \"image\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<integer>\",\n          \"price\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"specialPrice\": \"<double>\"\n        },\n        \"quantity\": \"<integer>\",\n        \"discount\": \"<double>\",\n        \"orderedProductPrice\": \"<double>\"\n      },\n      {\n        \"orderItemId\": \"<long>\",\n        \"product\": {\n          \"productId\": \"<long>\",\n          \"productName\": \"<string>\",\n          \"image\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<integer>\",\n          \"price\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"specialPrice\": \"<double>\"\n        },\n        \"quantity\": \"<integer>\",\n        \"discount\": \"<double>\",\n        \"orderedProductPrice\": \"<double>\"\n      }\n    ],\n    \"orderDate\": \"<date>\",\n    \"payment\": {\n      \"paymentId\": \"<long>\",\n      \"paymentMethod\": \"<string>\"\n    },\n    \"totalAmount\": \"<double>\",\n    \"orderStatus\": \"<string>\"\n  },\n  {\n    \"orderId\": \"<long>\",\n    \"email\": \"<string>\",\n    \"orderItems\": [\n      {\n        \"orderItemId\": \"<long>\",\n        \"product\": {\n          \"productId\": \"<long>\",\n          \"productName\": \"<string>\",\n          \"image\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<integer>\",\n          \"price\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"specialPrice\": \"<double>\"\n        },\n        \"quantity\": \"<integer>\",\n        \"discount\": \"<double>\",\n        \"orderedProductPrice\": \"<double>\"\n      },\n      {\n        \"orderItemId\": \"<long>\",\n        \"product\": {\n          \"productId\": \"<long>\",\n          \"productName\": \"<string>\",\n          \"image\": \"<string>\",\n          \"description\": \"<string>\",\n          \"quantity\": \"<integer>\",\n          \"price\": \"<double>\",\n          \"discount\": \"<double>\",\n          \"specialPrice\": \"<double>\"\n        },\n        \"quantity\": \"<integer>\",\n        \"discount\": \"<double>\",\n        \"orderedProductPrice\": \"<double>\"\n      }\n    ],\n    \"orderDate\": \"<date>\",\n    \"payment\": {\n      \"paymentId\": \"<long>\",\n      \"paymentMethod\": \"<string>\"\n    },\n    \"totalAmount\": \"<double>\",\n    \"orderStatus\": \"<string>\"\n  }\n]"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "carts",
+							"item": [
+								{
+									"name": "{cartId}",
+									"item": [
+										{
+											"name": "products",
+											"item": [
+												{
+													"name": "{productId}",
+													"item": [
+														{
+															"name": "quantity",
+															"item": [
+																{
+																	"name": "{quantity}",
+																	"item": [
+																		{
+																			"name": "update Cart Product",
+																			"request": {
+																				"auth": {
+																					"type": "bearer",
+																					"bearer": [
+																						{
+																							"key": "token",
+																							"value": "{{bearerToken}}",
+																							"type": "string"
+																						}
+																					]
+																				},
+																				"method": "PUT",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "*/*"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/public/carts/{{cartID}}/products/{{productID}}/quantity/{{quantity}}",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"public",
+																						"carts",
+																						"{{cartID}}",
+																						"products",
+																						"{{productID}}",
+																						"quantity",
+																						"{{quantity}}"
+																					]
+																				}
+																			},
+																			"response": [
+																				{
+																					"name": "OK",
+																					"originalRequest": {
+																						"method": "PUT",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							},
+																							{
+																								"key": "Authorization",
+																								"value": "Bearer <token>",
+																								"description": "Added as a part of security scheme: bearer"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/api/public/carts/:cartId/products/:productId/quantity/:quantity",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"public",
+																								"carts",
+																								":cartId",
+																								"products",
+																								":productId",
+																								"quantity",
+																								":quantity"
+																							],
+																							"variable": [
+																								{
+																									"key": "cartId"
+																								},
+																								{
+																									"key": "productId"
+																								},
+																								{
+																									"key": "quantity"
+																								}
+																							]
+																						}
+																					},
+																					"status": "OK",
+																					"code": 200,
+																					"_postman_previewlanguage": "text",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "*/*"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"cartId\": \"<long>\",\n  \"totalPrice\": \"<double>\",\n  \"products\": [\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    }\n  ]\n}"
+																				}
+																			]
+																		},
+																		{
+																			"name": "add Product To Cart",
+																			"request": {
+																				"auth": {
+																					"type": "bearer",
+																					"bearer": [
+																						{
+																							"key": "token",
+																							"value": "{{bearerToken}}",
+																							"type": "string"
+																						}
+																					]
+																				},
+																				"method": "POST",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "*/*"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/public/carts/{{cartID}}/products/{{productID}}/quantity/{{quantity}}",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"public",
+																						"carts",
+																						"{{cartID}}",
+																						"products",
+																						"{{productID}}",
+																						"quantity",
+																						"{{quantity}}"
+																					]
+																				}
+																			},
+																			"response": [
+																				{
+																					"name": "OK",
+																					"originalRequest": {
+																						"method": "POST",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							},
+																							{
+																								"key": "Authorization",
+																								"value": "Bearer <token>",
+																								"description": "Added as a part of security scheme: bearer"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/api/public/carts/:cartId/products/:productId/quantity/:quantity",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"public",
+																								"carts",
+																								":cartId",
+																								"products",
+																								":productId",
+																								"quantity",
+																								":quantity"
+																							],
+																							"variable": [
+																								{
+																									"key": "cartId"
+																								},
+																								{
+																									"key": "productId"
+																								},
+																								{
+																									"key": "quantity"
+																								}
+																							]
+																						}
+																					},
+																					"status": "OK",
+																					"code": 200,
+																					"_postman_previewlanguage": "text",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "*/*"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"cartId\": \"<long>\",\n  \"totalPrice\": \"<double>\",\n  \"products\": [\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    }\n  ]\n}"
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "product",
+											"item": [
+												{
+													"name": "{productId}",
+													"item": [
+														{
+															"name": "delete Product From Cart",
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": [
+																		{
+																			"key": "token",
+																			"value": "{{bearerToken}}",
+																			"type": "string"
+																		}
+																	]
+																},
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/public/carts/{{cartID}}/product/{{productID}}",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"public",
+																		"carts",
+																		"{{cartID}}",
+																		"product",
+																		"{{productID}}"
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "*/*"
+																			},
+																			{
+																				"key": "Authorization",
+																				"value": "Bearer <token>",
+																				"description": "Added as a part of security scheme: bearer"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/public/carts/:cartId/product/:productId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"public",
+																				"carts",
+																				":cartId",
+																				"product",
+																				":productId"
+																			],
+																			"variable": [
+																				{
+																					"key": "cartId"
+																				},
+																				{
+																					"key": "productId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "*/*"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "<string>"
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "keyword",
+									"item": [
+										{
+											"name": "{keyword}",
+											"item": [
+												{
+													"name": "get Products By Keyword",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/public/products/keyword/{{keyword}}?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"public",
+																"products",
+																"keyword",
+																"{{keyword}}"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "0"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "2"
+																},
+																{
+																	"key": "sortBy",
+																	"value": "productId"
+																},
+																{
+																	"key": "sortOrder",
+																	"value": "asc"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/public/products/keyword/:keyword?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"public",
+																		"products",
+																		"keyword",
+																		":keyword"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "0"
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "2"
+																		},
+																		{
+																			"key": "sortBy",
+																			"value": "productId"
+																		},
+																		{
+																			"key": "sortOrder",
+																			"value": "asc"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "keyword"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"content\": [\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    }\n  ],\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"lastPage\": \"<boolean>\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get All Products",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/public/products?pageNumber=0&pageSize=10&sortBy=productId&sortOrder=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"public",
+												"products"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "10"
+												},
+												{
+													"key": "sortBy",
+													"value": "productId"
+												},
+												{
+													"key": "sortOrder",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/public/products?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"public",
+														"products"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "0"
+														},
+														{
+															"key": "pageSize",
+															"value": "2"
+														},
+														{
+															"key": "sortBy",
+															"value": "productId"
+														},
+														{
+															"key": "sortOrder",
+															"value": "asc"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": [\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    }\n  ],\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"lastPage\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "categories",
+							"item": [
+								{
+									"name": "{categoryId}",
+									"item": [
+										{
+											"name": "products",
+											"item": [
+												{
+													"name": "get Products By Category",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/public/categories/{{categoryID}}/products?pageNumber=0&pageSize=10&sortBy=productId&sortOrder=asc",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"public",
+																"categories",
+																"{{categoryID}}",
+																"products"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "0"
+																},
+																{
+																	"key": "pageSize",
+																	"value": "10"
+																},
+																{
+																	"key": "sortBy",
+																	"value": "productId"
+																},
+																{
+																	"key": "sortOrder",
+																	"value": "asc"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/public/categories/:categoryId/products?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"public",
+																		"categories",
+																		":categoryId",
+																		"products"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "0"
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "2"
+																		},
+																		{
+																			"key": "sortBy",
+																			"value": "productId"
+																		},
+																		{
+																			"key": "sortOrder",
+																			"value": "asc"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "categoryId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"content\": [\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    },\n    {\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"image\": \"<string>\",\n      \"description\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\",\n      \"discount\": \"<double>\",\n      \"specialPrice\": \"<double>\"\n    }\n  ],\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"lastPage\": \"<boolean>\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get Categories",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/public/categories?pageNumber=0&pageSize=3&sortBy=categoryId&sortOrder=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"public",
+												"categories"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "3"
+												},
+												{
+													"key": "sortBy",
+													"value": "categoryId"
+												},
+												{
+													"key": "sortOrder",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/public/categories?pageNumber=0&pageSize=2&sortBy=categoryId&sortOrder=asc",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"public",
+														"categories"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "0"
+														},
+														{
+															"key": "pageSize",
+															"value": "2"
+														},
+														{
+															"key": "sortBy",
+															"value": "categoryId"
+														},
+														{
+															"key": "sortOrder",
+															"value": "asc"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": [\n    {\n      \"categoryId\": \"<long>\",\n      \"categoryName\": \"<string>\"\n    },\n    {\n      \"categoryId\": \"<long>\",\n      \"categoryName\": \"<string>\"\n    }\n  ],\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"lastPage\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "users",
+							"item": [
+								{
+									"name": "{email}",
+									"item": [
+										{
+											"name": "orders",
+											"item": [
+												{
+													"name": "{orderId}",
+													"item": [
+														{
+															"name": "orderStatus",
+															"item": [
+																{
+																	"name": "{orderStatus}",
+																	"item": [
+																		{
+																			"name": "update Order By User",
+																			"request": {
+																				"auth": {
+																					"type": "bearer",
+																					"bearer": [
+																						{
+																							"key": "token",
+																							"value": "{{bearerToken}}",
+																							"type": "string"
+																						}
+																					]
+																				},
+																				"method": "PUT",
+																				"header": [
+																					{
+																						"key": "Accept",
+																						"value": "*/*"
+																					}
+																				],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/admin/users/{{email}}/orders/{{orderID}}/orderStatus/{{orderStatus}}",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"admin",
+																						"users",
+																						"{{email}}",
+																						"orders",
+																						"{{orderID}}",
+																						"orderStatus",
+																						"{{orderStatus}}"
+																					]
+																				}
+																			},
+																			"response": [
+																				{
+																					"name": "OK",
+																					"originalRequest": {
+																						"method": "PUT",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							},
+																							{
+																								"key": "Authorization",
+																								"value": "Bearer <token>",
+																								"description": "Added as a part of security scheme: bearer"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/api/admin/users/:email/orders/:orderId/orderStatus/:orderStatus",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"admin",
+																								"users",
+																								":email",
+																								"orders",
+																								":orderId",
+																								"orderStatus",
+																								":orderStatus"
+																							],
+																							"variable": [
+																								{
+																									"key": "email"
+																								},
+																								{
+																									"key": "orderId"
+																								},
+																								{
+																									"key": "orderStatus"
+																								}
+																							]
+																						}
+																					},
+																					"status": "OK",
+																					"code": 200,
+																					"_postman_previewlanguage": "text",
+																					"header": [
+																						{
+																							"key": "Content-Type",
+																							"value": "*/*"
+																						}
+																					],
+																					"cookie": [],
+																					"body": "{\n  \"orderId\": \"<long>\",\n  \"email\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ],\n  \"orderDate\": \"<date>\",\n  \"payment\": {\n    \"paymentId\": \"<long>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"orderStatus\": \"<string>\"\n}"
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "{userId}",
+									"item": [
+										{
+											"name": "delete User",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/users/{{userID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"users",
+														"{{userID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/users/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"users",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get Users",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/admin/users?pageNumber=0&pageSize=3&sortBy=userId&sortOrder=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"users"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "3"
+												},
+												{
+													"key": "sortBy",
+													"value": "userId"
+												},
+												{
+													"key": "sortOrder",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/users?pageNumber=0&pageSize=2&sortBy=userId&sortOrder=asc",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"users"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "0"
+														},
+														{
+															"key": "pageSize",
+															"value": "2"
+														},
+														{
+															"key": "sortBy",
+															"value": "userId"
+														},
+														{
+															"key": "sortOrder",
+															"value": "asc"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": [\n    {\n      \"userId\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobileNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"roles\": [\n        {\n          \"roleId\": \"<long>\",\n          \"roleName\": \"<string>\"\n        },\n        {\n          \"roleId\": \"<long>\",\n          \"roleName\": \"<string>\"\n        }\n      ],\n      \"address\": {\n        \"addressId\": \"<long>\",\n        \"street\": \"<string>\",\n        \"buildingName\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"pincode\": \"<string>\"\n      },\n      \"cart\": {\n        \"cartId\": \"<long>\",\n        \"totalPrice\": \"<double>\",\n        \"products\": [\n          {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          },\n          {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          }\n        ]\n      }\n    },\n    {\n      \"userId\": \"<long>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"mobileNumber\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"roles\": [\n        {\n          \"roleId\": \"<long>\",\n          \"roleName\": \"<string>\"\n        },\n        {\n          \"roleId\": \"<long>\",\n          \"roleName\": \"<string>\"\n        }\n      ],\n      \"address\": {\n        \"addressId\": \"<long>\",\n        \"street\": \"<string>\",\n        \"buildingName\": \"<string>\",\n        \"city\": \"<string>\",\n        \"state\": \"<string>\",\n        \"country\": \"<string>\",\n        \"pincode\": \"<string>\"\n      },\n      \"cart\": {\n        \"cartId\": \"<long>\",\n        \"totalPrice\": \"<double>\",\n        \"products\": [\n          {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          },\n          {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"lastPage\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "{productId}",
+									"item": [
+										{
+											"name": "image",
+											"item": [
+												{
+													"name": "update Product Image",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "formdata",
+															"formdata": [
+																{
+																	"key": "image",
+																	"type": "file",
+																	"src": "/C:/Users/aspir/Downloads/acer.jpg"
+																}
+															]
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/products/{{productID}}/image",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"products",
+																"{{productID}}",
+																"image"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"image\": \"<binary>\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/admin/products/:productId/image",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"admin",
+																		"products",
+																		":productId",
+																		"image"
+																	],
+																	"variable": [
+																		{
+																			"key": "productId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"productId\": \"<long>\",\n  \"productName\": \"<string>\",\n  \"image\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"price\": \"<double>\",\n  \"discount\": \"<double>\",\n  \"specialPrice\": \"<double>\"\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "update Product",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"description\": \"Face Wash\",\n    \"productName\": \"Kahf Face Wash\",\n    \"image\": \"kahf.jpg\",\n    \"quantity\": \"240\",\n    \"price\": 60000,\n    \"discount\": 10\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/products/{{productID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"products",
+														"{{productID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"description\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productId\": \"<long>\",\n  \"image\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"price\": \"<double>\",\n  \"discount\": \"<double>\",\n  \"specialPrice\": \"<double>\",\n  \"category\": {\n    \"categoryName\": \"<string>\",\n    \"categoryId\": \"<long>\",\n    \"products\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      }\n    ]\n  },\n  \"products\": [\n    {\n      \"cartItemId\": \"<long>\",\n      \"cart\": {\n        \"cartId\": \"<long>\",\n        \"user\": {\n          \"userId\": \"<long>\",\n          \"firstName\": \"lvalva\",\n          \"lastName\": \"TTTTTTTT\",\n          \"mobileNumber\": \"0867620488\",\n          \"email\": \"<string>\",\n          \"password\": \"<string>\",\n          \"roles\": [\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            },\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            }\n          ],\n          \"addresses\": [\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            },\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            }\n          ],\n          \"cart\": {\n            \"value\": \"<Circular reference to #/components/schemas/Cart detected>\"\n          }\n        },\n        \"cartItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          }\n        ],\n        \"totalPrice\": \"<double>\"\n      },\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"productPrice\": \"<double>\"\n    },\n    {\n      \"cartItemId\": \"<long>\",\n      \"cart\": {\n        \"cartId\": \"<long>\",\n        \"user\": {\n          \"userId\": \"<long>\",\n          \"firstName\": \"TzCKuwir\",\n          \"lastName\": \"        \",\n          \"mobileNumber\": \"9302804857\",\n          \"email\": \"<string>\",\n          \"password\": \"<string>\",\n          \"roles\": [\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            },\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            }\n          ],\n          \"addresses\": [\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            },\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            }\n          ],\n          \"cart\": {\n            \"value\": \"<Circular reference to #/components/schemas/Cart detected>\"\n          }\n        },\n        \"cartItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          }\n        ],\n        \"totalPrice\": \"<double>\"\n      },\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"productPrice\": \"<double>\"\n    }\n  ],\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"order\": {\n        \"orderId\": \"<long>\",\n        \"email\": \"<string>\",\n        \"orderItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          }\n        ],\n        \"orderDate\": \"<date>\",\n        \"payment\": {\n          \"paymentMethod\": \"<string>\",\n          \"paymentId\": \"<long>\",\n          \"order\": {\n            \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n          }\n        },\n        \"totalAmount\": \"<double>\",\n        \"orderStatus\": \"<string>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"order\": {\n        \"orderId\": \"<long>\",\n        \"email\": \"<string>\",\n        \"orderItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          }\n        ],\n        \"orderDate\": \"<date>\",\n        \"payment\": {\n          \"paymentMethod\": \"<string>\",\n          \"paymentId\": \"<long>\",\n          \"order\": {\n            \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n          }\n        },\n        \"totalAmount\": \"<double>\",\n        \"orderStatus\": \"<string>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/products/:productId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"products",
+																":productId"
+															],
+															"variable": [
+																{
+																	"key": "productId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"productId\": \"<long>\",\n  \"productName\": \"<string>\",\n  \"image\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"price\": \"<double>\",\n  \"discount\": \"<double>\",\n  \"specialPrice\": \"<double>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Product By Category",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/products/{{productID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"products",
+														"{{productID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/products/:productId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"products",
+																":productId"
+															],
+															"variable": [
+																{
+																	"key": "productId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "categories",
+							"item": [
+								{
+									"name": "{categoryId}",
+									"item": [
+										{
+											"name": "product",
+											"item": [
+												{
+													"name": "add Product",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{bearerToken}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n    \"description\": \"Oppo Flagship Phone\",\n    \"productName\": \"Oppo Find X8\",\n    \"image\": \"oppo.jpg\",\n    \"quantity\": \"4\",\n    \"price\": 13000000,\n    \"discount\": 15\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/categories/{{categoryID}}/product",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"categories",
+																"{{categoryID}}",
+																"product"
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "OK",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	},
+																	{
+																		"key": "Authorization",
+																		"value": "Bearer <token>",
+																		"description": "Added as a part of security scheme: bearer"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"description\": \"<string>\",\n  \"productName\": \"<string>\",\n  \"productId\": \"<long>\",\n  \"image\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"price\": \"<double>\",\n  \"discount\": \"<double>\",\n  \"specialPrice\": \"<double>\",\n  \"category\": {\n    \"categoryName\": \"<string>\",\n    \"categoryId\": \"<long>\",\n    \"products\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      }\n    ]\n  },\n  \"products\": [\n    {\n      \"cartItemId\": \"<long>\",\n      \"cart\": {\n        \"cartId\": \"<long>\",\n        \"user\": {\n          \"userId\": \"<long>\",\n          \"firstName\": \"lvalva\",\n          \"lastName\": \"TTTTTTTT\",\n          \"mobileNumber\": \"0867620488\",\n          \"email\": \"<string>\",\n          \"password\": \"<string>\",\n          \"roles\": [\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            },\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            }\n          ],\n          \"addresses\": [\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            },\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            }\n          ],\n          \"cart\": {\n            \"value\": \"<Circular reference to #/components/schemas/Cart detected>\"\n          }\n        },\n        \"cartItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          }\n        ],\n        \"totalPrice\": \"<double>\"\n      },\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"productPrice\": \"<double>\"\n    },\n    {\n      \"cartItemId\": \"<long>\",\n      \"cart\": {\n        \"cartId\": \"<long>\",\n        \"user\": {\n          \"userId\": \"<long>\",\n          \"firstName\": \"TzCKuwir\",\n          \"lastName\": \"        \",\n          \"mobileNumber\": \"9302804857\",\n          \"email\": \"<string>\",\n          \"password\": \"<string>\",\n          \"roles\": [\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            },\n            {\n              \"roleId\": \"<long>\",\n              \"roleName\": \"<string>\"\n            }\n          ],\n          \"addresses\": [\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            },\n            {\n              \"buildingName\": \"<string>\",\n              \"city\": \"<string>\",\n              \"country\": \"<string>\",\n              \"pincode\": \"<string>\",\n              \"state\": \"<string>\",\n              \"street\": \"<string>\",\n              \"addressId\": \"<long>\",\n              \"users\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n                }\n              ]\n            }\n          ],\n          \"cart\": {\n            \"value\": \"<Circular reference to #/components/schemas/Cart detected>\"\n          }\n        },\n        \"cartItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/CartItem detected>\"\n          }\n        ],\n        \"totalPrice\": \"<double>\"\n      },\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"productPrice\": \"<double>\"\n    }\n  ],\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"order\": {\n        \"orderId\": \"<long>\",\n        \"email\": \"<string>\",\n        \"orderItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          }\n        ],\n        \"orderDate\": \"<date>\",\n        \"payment\": {\n          \"paymentMethod\": \"<string>\",\n          \"paymentId\": \"<long>\",\n          \"order\": {\n            \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n          }\n        },\n        \"totalAmount\": \"<double>\",\n        \"orderStatus\": \"<string>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n      },\n      \"order\": {\n        \"orderId\": \"<long>\",\n        \"email\": \"<string>\",\n        \"orderItems\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/OrderItem detected>\"\n          }\n        ],\n        \"orderDate\": \"<date>\",\n        \"payment\": {\n          \"paymentMethod\": \"<string>\",\n          \"paymentId\": \"<long>\",\n          \"order\": {\n            \"value\": \"<Circular reference to #/components/schemas/Order detected>\"\n          }\n        },\n        \"totalAmount\": \"<double>\",\n        \"orderStatus\": \"<string>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/admin/categories/:categoryId/product",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"admin",
+																		"categories",
+																		":categoryId",
+																		"product"
+																	],
+																	"variable": [
+																		{
+																			"key": "categoryId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "*/*"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"productId\": \"<long>\",\n  \"productName\": \"<string>\",\n  \"image\": \"<string>\",\n  \"description\": \"<string>\",\n  \"quantity\": \"<integer>\",\n  \"price\": \"<double>\",\n  \"discount\": \"<double>\",\n  \"specialPrice\": \"<double>\"\n}"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "update Category",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"categoryName\": \"stationary\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/categories/{{categoryID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"categories",
+														"{{categoryID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"categoryName\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"products\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/categories/:categoryId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"categories",
+																":categoryId"
+															],
+															"variable": [
+																{
+																	"key": "categoryId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"categoryId\": \"<long>\",\n  \"categoryName\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Category",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/categories/{{categoryID}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"categories",
+														"{{categoryID}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/categories/:categoryId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"categories",
+																":categoryId"
+															],
+															"variable": [
+																{
+																	"key": "categoryId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "addresses",
+							"item": [
+								{
+									"name": "{addressId}",
+									"item": [
+										{
+											"name": "get Address",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/addresses/{{addressId}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"addresses",
+														"{{addressId}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/addresses/:addressId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"addresses",
+																":addressId"
+															],
+															"variable": [
+																{
+																	"key": "addressId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"addressId\": \"<long>\",\n  \"street\": \"<string>\",\n  \"buildingName\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"pincode\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "update Address",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"street\": \"street1\",\n  \"buildingName\": \"building\",\n  \"city\": \"jakarta\",\n  \"state\": \"jakarta\",\n  \"country\": \"malaysia\",\n  \"pincode\": \"352124\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/addresses/{{addressId}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"addresses",
+														"{{addressId}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"buildingName\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"pincode\": \"<string>\",\n  \"state\": \"<string>\",\n  \"street\": \"<string>\",\n  \"addressId\": \"<long>\",\n  \"users\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/addresses/:addressId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"addresses",
+																":addressId"
+															],
+															"variable": [
+																{
+																	"key": "addressId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"addressId\": \"<long>\",\n  \"street\": \"<string>\",\n  \"buildingName\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"pincode\": \"<string>\"\n}"
+												}
+											]
+										},
+										{
+											"name": "delete Address",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearerToken}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/addresses/{{addressId}}",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"addresses",
+														"{{addressId}}"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/addresses/:addressId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"addresses",
+																":addressId"
+															],
+															"variable": [
+																{
+																	"key": "addressId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<string>"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "get Addresses",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/admin/addresses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"addresses"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/addresses",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"addresses"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  },\n  {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  }\n]"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "category",
+							"item": [
+								{
+									"name": "create Category",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"categoryName\": \"utility\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/admin/category",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"category"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"categoryName\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"products\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/category",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"category"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"categoryId\": \"<long>\",\n  \"categoryName\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "address",
+							"item": [
+								{
+									"name": "create Address",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"street\": \"ahmad yani\",\n    \"buildingName\": \"gedung A\",\n    \"city\": \"balam\",\n    \"state\": \"lampung\",\n    \"country\": \"indonesia\",\n    \"pincode\": \"123456\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/admin/address",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"address"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"street\": \"<string>\",\n  \"buildingName\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"pincode\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/address",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"address"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"addressId\": \"<long>\",\n  \"street\": \"<string>\",\n  \"buildingName\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"country\": \"<string>\",\n  \"pincode\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "orders",
+							"item": [
+								{
+									"name": "get All Orders",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/admin/orders?pageNumber=0&pageSize=2&sortBy=totalAmount&sortOrder=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "2"
+												},
+												{
+													"key": "sortBy",
+													"value": "totalAmount"
+												},
+												{
+													"key": "sortOrder",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/orders?pageNumber=0&pageSize=2&sortBy=totalAmount&sortOrder=asc",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"orders"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "0"
+														},
+														{
+															"key": "pageSize",
+															"value": "2"
+														},
+														{
+															"key": "sortBy",
+															"value": "totalAmount"
+														},
+														{
+															"key": "sortOrder",
+															"value": "asc"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"content\": [\n    {\n      \"orderId\": \"<long>\",\n      \"email\": \"<string>\",\n      \"orderItems\": [\n        {\n          \"orderItemId\": \"<long>\",\n          \"product\": {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          },\n          \"quantity\": \"<integer>\",\n          \"discount\": \"<double>\",\n          \"orderedProductPrice\": \"<double>\"\n        },\n        {\n          \"orderItemId\": \"<long>\",\n          \"product\": {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          },\n          \"quantity\": \"<integer>\",\n          \"discount\": \"<double>\",\n          \"orderedProductPrice\": \"<double>\"\n        }\n      ],\n      \"orderDate\": \"<date>\",\n      \"payment\": {\n        \"paymentId\": \"<long>\",\n        \"paymentMethod\": \"<string>\"\n      },\n      \"totalAmount\": \"<double>\",\n      \"orderStatus\": \"<string>\"\n    },\n    {\n      \"orderId\": \"<long>\",\n      \"email\": \"<string>\",\n      \"orderItems\": [\n        {\n          \"orderItemId\": \"<long>\",\n          \"product\": {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          },\n          \"quantity\": \"<integer>\",\n          \"discount\": \"<double>\",\n          \"orderedProductPrice\": \"<double>\"\n        },\n        {\n          \"orderItemId\": \"<long>\",\n          \"product\": {\n            \"productId\": \"<long>\",\n            \"productName\": \"<string>\",\n            \"image\": \"<string>\",\n            \"description\": \"<string>\",\n            \"quantity\": \"<integer>\",\n            \"price\": \"<double>\",\n            \"discount\": \"<double>\",\n            \"specialPrice\": \"<double>\"\n          },\n          \"quantity\": \"<integer>\",\n          \"discount\": \"<double>\",\n          \"orderedProductPrice\": \"<double>\"\n        }\n      ],\n      \"orderDate\": \"<date>\",\n      \"payment\": {\n        \"paymentId\": \"<long>\",\n        \"paymentMethod\": \"<string>\"\n      },\n      \"totalAmount\": \"<double>\",\n      \"orderStatus\": \"<string>\"\n    }\n  ],\n  \"pageNumber\": \"<integer>\",\n  \"pageSize\": \"<integer>\",\n  \"totalElements\": \"<long>\",\n  \"totalPages\": \"<integer>\",\n  \"lastPage\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "carts",
+							"item": [
+								{
+									"name": "get Carts",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearerToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/admin/carts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"admin",
+												"carts"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/carts",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"carts"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  },\n  {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n]"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "register",
+					"item": [
+						{
+							"name": "register Handler",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": 9,\n    \"firstName\": \"hazim\",\n    \"lastName\": \"bukanadmin\",\n    \"mobileNumber\": \"3170547700\",\n    \"email\": \"hazim@gmail.com\",\n    \"password\": \"rikza\",\n    \"roles\": [\n      {\n        \"roleId\": 101,\n        \"roleName\": \"ADMIN\"\n      }\n    ],\n    \"address\": {\n      \"street\": \"street1012\",\n      \"buildingName\": \"building16\",\n      \"city\": \"depok\",\n      \"state\": \"yogyakarta\",\n      \"country\": \"indonesia\",\n      \"pincode\": \"352123\"\n    }\n  }\n  ",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userId\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"roles\": [\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    },\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  },\n  \"cart\": {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/register",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"commodo94\": {},\n  \"occaecat14\": {},\n  \"sint2\": {}\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "login Handler",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Successful Registration\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    \r",
+											"    pm.expect(jsonData[\"jwt-token\"]).to.be.a('string');\r",
+											"\r",
+											"    pm.collectionVariables.set(\"bearerToken\", jsonData[\"jwt-token\"]);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"hazim@gmail.com\",\n  \"password\": \"rikza\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"commodo94\": {},\n  \"occaecat14\": {},\n  \"sint2\": {}\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "var-4",
+			"item": [
+				{
+					"name": "Get All Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/admin/carts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"carts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <token>",
+										"description": "Added as a part of security scheme: bearer"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/admin/carts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"carts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  },\n  {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Coupon to user Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Oppo Flagship Phone\",\n    \"productName\": \"Oppo Find X8\",\n    \"image\": \"oppo.jpg\",\n    \"quantity\": \"4\",\n    \"price\": 13000000,\n    \"discount\": 15\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/public/users/{{email}}/orders/{{orderID}}/coupon/{{couponID}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"users",
+								"{{email}}",
+								"orders",
+								"{{orderID}}",
+								"coupon",
+								"{{couponID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discountPercentage\": 0.1,\r\n    \"title\": \"diskon 12.12\",\r\n    \"description\": \"diskon spesial event 12 desember\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/public/coupon",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discountPercentage\": 0.1,\r\n    \"title\": \"diskon 12.12\",\r\n    \"description\": \"diskon spesial event 12 desember\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/public/coupon/:couponId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"coupon",
+								":couponId"
+							],
+							"variable": [
+								{
+									"key": "couponId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discountPercentage\": 0.1,\r\n    \"title\": \"diskon 12.12\",\r\n    \"description\": \"diskon spesial event 12 desember\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/public/coupon/:couponId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"coupon",
+								":couponId"
+							],
+							"variable": [
+								{
+									"key": "couponId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "userID",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "categoryID",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "addressId",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "keyword",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "productID",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "email",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "cartID",
+			"value": "3",
+			"type": "default"
+		},
+		{
+			"key": "quantity",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "paymentMethod",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "orderID",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "orderStatus",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "couponID",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
