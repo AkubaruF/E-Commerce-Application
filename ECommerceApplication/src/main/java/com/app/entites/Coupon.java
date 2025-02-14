@@ -19,10 +19,10 @@ import lombok.NoArgsConstructor;
 public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long coupon_id;
+    private Long couponId;
 
     @NotBlank
-    private double discount_percentage;
+    private double discountPercentage;
 
     private String title;
     private String description;
