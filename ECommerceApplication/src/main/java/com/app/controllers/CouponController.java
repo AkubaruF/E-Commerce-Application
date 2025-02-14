@@ -38,13 +38,13 @@ public class CouponController {
     }
 
     @PostMapping("/public/coupon")
-    public ResponseEntity<CouponDTO> createCoupon(@Valid @RequestBody Coupon coupon){
+    public ResponseEntity<CouponDTO> createCoupon(@RequestBody Coupon coupon){
         CouponDTO savedCouponDTO = couponService.createCoupon(coupon);
         return new ResponseEntity<CouponDTO>(savedCouponDTO, HttpStatus.FOUND);
     }
 
     @PutMapping("/public/coupon/{couponId}")
-    public ResponseEntity<CouponDTO> updateCoupon(@Valid @RequestBody Coupon coupon, @PathVariable Long couponId){
+    public ResponseEntity<CouponDTO> updateCoupon(@RequestBody Coupon coupon, @PathVariable Long couponId){
         CouponDTO savedCouponDTO = couponService.updateCoupon(coupon, couponId);
         return new ResponseEntity<CouponDTO>(savedCouponDTO, HttpStatus.FOUND);
     }
