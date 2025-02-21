@@ -39,4 +39,8 @@ public class Cart {
 	@OneToOne
 	@JoinColumn(name = "coupon_id")
 	private Coupon coupon;
+
+	@OneToOne
+	@JoinColumn(name = "promo_code_id")
+	private PromoCode code;
 }
