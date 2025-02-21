@@ -4,10 +4,13 @@ import java.util.List;
 
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderResponse;
+import com.app.payloads.OrderTransferDTO;
 
 public interface OrderService {
 	
 	OrderDTO placeOrder(String email, Long cartId, String paymentMethod);
+
+	OrderTransferDTO placeOrderTransfer(String email, Long cartId, String paymentMethod);
 	
 	OrderDTO getOrder(String email, Long orderId);
 	

@@ -2,6 +2,7 @@ package com.app.controllers;
 
 import java.util.List;
 
+import com.app.payloads.OrderTransferDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,13 @@ public class OrderController {
 		OrderDTO order = orderService.placeOrder(email, cartId, paymentMethod);
 		
 		return new ResponseEntity<OrderDTO>(order, HttpStatus.CREATED);
+	}
+
+	@PostMapping("/public/users/{email}/carts/{cartId}/payments/bank/{paymentMethod}/order")
+	public ResponseEntity<OrderTransferDTO> orderProductsTransfer(@PathVariable String email, @PathVariable Long cartId, @PathVariable String paymentMethod) {
+		OrderTransferDTO order = orderService.placeOrderTransfer(email, cartId, paymentMethod);
+
+		return new ResponseEntity<OrderTransferDTO>(order, HttpStatus.CREATED);
 	}
 
 	@GetMapping("/admin/orders")

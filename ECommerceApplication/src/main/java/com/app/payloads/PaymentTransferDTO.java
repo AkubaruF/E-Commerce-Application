@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaymentDTO {
+public class PaymentTransferDTO {
 	private Long paymentId;
 	private String paymentMethod;
+
+	private Integer accountNumber;
+
 }
