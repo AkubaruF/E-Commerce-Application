@@ -30,13 +30,13 @@ public class PromoCodeController {
         return new ResponseEntity<PromoCodeDTO>(savedPromoCodeDTO, HttpStatus.FOUND);
     }
 
-    @PutMapping("/public/code/{codeId}")
+    @PutMapping("/admin/code/{codeId}")
     public ResponseEntity<PromoCodeDTO> updateCode(@RequestBody PromoCode code, @PathVariable Long codeId) {
         PromoCodeDTO savedPromoCodeDTO = codeService.updateCode(code, codeId);
         return new ResponseEntity<PromoCodeDTO>(savedPromoCodeDTO, HttpStatus.FOUND);
     }
 
-    @DeleteMapping("/public/code/{codeId}")
+    @DeleteMapping("/admin/code/{codeId}")
     public ResponseEntity<String> deleteCode(@PathVariable Long codeId) {
         String status = codeService.deleteCode(codeId);
         return new ResponseEntity<String>(status, HttpStatus.FOUND);
